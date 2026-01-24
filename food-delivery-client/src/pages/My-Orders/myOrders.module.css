@@ -1,0 +1,124 @@
+.spin_container {
+  height: 100svh;
+  position: fixed;
+  display: grid;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #e9e9e983;
+  backdrop-filter: blur(4px);
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  place-self: center;
+  border: 5px solid #bdbdbd;
+  border-top-color: tomato;
+  border-radius: 50%;
+  animation: rotate 1s infinite linear;
+}
+
+.my_orders {
+  margin: 55px 0;
+}
+
+.no_order {
+  font-weight: 500;
+  margin-top: 50px;
+  color: tomato;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+
+.gobackBtn {
+  border-bottom: 2px solid tomato;
+  transition: all 0.3s;
+}
+
+.gobackBtn:hover {
+  color: #454545;
+  border-bottom: 2px solid #454545;
+}
+
+.my_orders .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.my_orders_order {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr;
+  align-items: center;
+  gap: 30px;
+  font-size: 14px;
+  padding: 10px 20px;
+  color: #454545;
+  border: 1px solid tomato;
+}
+
+.my_orders_order img {
+  width: 50px;
+}
+
+.my_orders_order p span {
+  color: tomato;
+}
+
+.my_orders_order p b {
+  font-weight: 500;
+  color: #454545;
+}
+
+.my_orders_order button {
+  border: none;
+  padding: 12px 0;
+  border-radius: 4px;
+  background-color: #ffe1e1;
+  cursor: pointer;
+  color: #454545;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 990px) {
+  .my_orders_order {
+    grid-template-columns: 1fr 2fr 1fr;
+    row-gap: 5px;
+    font-size: 12px;
+  }
+
+  .my_orders_order button {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 855px) {
+  .no_order {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .no_order svg {
+    font-size: max(10vw, 30px);
+  }
+}
+
+@media (max-width: 450px) {
+  .no_order {
+    flex-direction: column;
+    text-align: center;
+    font-size: max(5vw, 16px);
+  }
+}

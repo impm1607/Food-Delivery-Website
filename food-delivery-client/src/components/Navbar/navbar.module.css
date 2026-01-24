@@ -1,0 +1,195 @@
+.navbar {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  width: 150px;
+}
+
+.navbar_menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: #49557e;
+  font-size: 18px;
+}
+
+.navbar_right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar button {
+  background: transparent;
+  font-size: 16px;
+  color: #49557e;
+  border: 1px solid #49557e;
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.navbar button:hover {
+  background-color: #fff4f2;
+  border: 1px solid tomato;
+  color: tomato;
+}
+
+.search_icon,
+.basket_icon {
+  font-size: 30px;
+  color: #49557e;
+}
+
+.navbar .active {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #49557e;
+}
+
+.navbar li {
+  cursor: pointer;
+}
+
+.navbar_search_icon {
+  position: relative;
+}
+
+.navbar_search_icon .dot {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: tomato;
+  border-radius: 5px;
+  top: -4px;
+  right: -4px;
+}
+
+.navbar_profile {
+  position: relative;
+}
+
+.navbar_profile img {
+  cursor: pointer;
+}
+
+.nav_profile_dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(255, 99, 71, 0.273);
+  list-style: none;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.navbar_profile:hover .nav_profile_dropdown {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s;
+  pointer-events: all;
+}
+
+.nav_profile_dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 12px 25px;
+}
+
+.nav_profile_dropdown hr {
+  border: none;
+  height: 1px;
+  background-color: #dbdbdb;
+}
+
+.nav_profile_dropdown li svg {
+  font-size: 20px;
+}
+
+.nav_profile_dropdown li:hover {
+  color: tomato;
+  background-color: #fffbfb;
+}
+
+@media (max-width: 1050px) {
+  .navbar .logo {
+    width: 140px;
+  }
+
+  .navbar_menu {
+    font-size: 17px;
+  }
+
+  .navbar_right {
+    gap: 30px;
+  }
+
+  .search_icon,
+  .basket_icon {
+    font-size: 22px;
+  }
+
+  .navbar button {
+    padding: 8px 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar .logo {
+    width: 120px;
+  }
+
+  .navbar_menu {
+    gap: 15px;
+    font-size: 16px;
+  }
+
+  .navbar_right {
+    gap: 20px;
+  }
+
+  .search_icon,
+  .basket_icon {
+    font-size: 20px;
+  }
+
+  .navbar button {
+    padding: 7px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar_menu {
+    display: none;
+  }
+}
+
+@media (max-width: 370px) {
+  .navbar .logo {
+    width: 100px;
+  }
+
+  .search_icon,
+  .basket_icon {
+    font-size: 18px;
+  }
+
+  .navbar button {
+    padding: 5px 16px;
+    font-size: 12px;
+  }
+}
