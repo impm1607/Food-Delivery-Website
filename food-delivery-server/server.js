@@ -17,7 +17,6 @@ const port = process.env.PORT || 8000;
 
 // middlewares
 app.use(express.json());
-app.use(cookieParser());
 
 const allowedOrigins = [
   "http://localhost:5173",
@@ -47,6 +46,8 @@ app.use(
 //     credentials: true,
 //   }),
 // );
+
+app.use(cookieParser());
 
 // db connection
 connectDB();
