@@ -40,6 +40,7 @@ const loginUser = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
       path: "/",
       sameSite: "none",
+      domain: ".onrender.com", // Add domain for production
     });
 
     return res.json({
@@ -114,6 +115,7 @@ const registerUSer = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
       path: "/",
       sameSite: "none",
+      domain: ".onrender.com", // Add domain for production
     });
 
     return res.json({
@@ -144,6 +146,7 @@ const logOutUser = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
       path: "/",
       sameSite: "none",
+      domain: ".onrender.com", // Add domain for production
     });
 
     // res.clearCookie("tokenUser");
