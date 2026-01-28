@@ -21,9 +21,7 @@ const Navbar = ({ setShowLogin }) => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.get(
-        import.meta.env.VITE_PORT + "/api/user/logout"
-      );
+      const res = await api.get(import.meta.env.VITE_PORT + "/api/user/logout");
 
       if (res.data.success) {
         checkLoginStatus();
@@ -47,25 +45,29 @@ const Navbar = ({ setShowLogin }) => {
         <NavLink
           to={"/"}
           onClick={() => setMenu("home")}
-          className={menu === "home" ? styles.active : ""}>
+          className={menu === "home" ? styles.active : ""}
+        >
           home
         </NavLink>
         <a
           href="#explore-menu"
           onClick={() => setMenu("menu")}
-          className={menu === "menu" ? styles.active : ""}>
+          className={menu === "menu" ? styles.active : ""}
+        >
           menu
         </a>
         <a
           href="#app-download"
           onClick={() => setMenu("mobile-app")}
-          className={menu === "mobile-app" ? styles.active : ""}>
+          className={menu === "mobile-app" ? styles.active : ""}
+        >
           mobile app
         </a>
         <a
           href="#footer"
           onClick={() => setMenu("contact-us")}
-          className={menu === "contact-us" ? styles.active : ""}>
+          className={menu === "contact-us" ? styles.active : ""}
+        >
           contact us
         </a>
       </ul>

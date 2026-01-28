@@ -11,8 +11,8 @@ const Order = () => {
 
   const fectchAllOrders = async () => {
     try {
-      const res = await axios.get(
-        import.meta.env.VITE_PORT + "/api/order/list-orders"
+      const res = await api.get(
+        import.meta.env.VITE_PORT + "/api/order/list-orders",
       );
 
       if (res.data.success) {
@@ -33,9 +33,9 @@ const Order = () => {
     try {
       setLoading(true);
 
-      const res = await axios.patch(
+      const res = await api.patch(
         import.meta.env.VITE_PORT + "/api/order/update-status",
-        { orderId, status: e.target.value }
+        { orderId, status: e.target.value },
       );
 
       if (res.data.success) {
@@ -97,7 +97,8 @@ const Order = () => {
 
               <select
                 onChange={(e) => updateStatus(e, elm?._id)}
-                value={loading ? "Updating..." : elm.status}>
+                value={loading ? "Updating..." : elm.status}
+              >
                 <option value="Food Processing">Food Processing</option>
                 <option value="Out For Delivery">Out For Delivery</option>
                 <option value="Delivered">Delivered</option>

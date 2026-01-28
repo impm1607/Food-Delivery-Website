@@ -59,9 +59,9 @@ const PlaceOrder = () => {
     try {
       setLoading(true);
 
-      const res = await axios.post(
+      const res = await api.post(
         import.meta.env.VITE_PORT + "/api/order/place",
-        orderData
+        orderData,
       );
 
       if (res.data.success) {

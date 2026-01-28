@@ -6,12 +6,12 @@ import { BrowserRouter } from "react-router-dom";
 import StoreContextProvider from "./context/storeContext.jsx";
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
+api.defaults.withCredentials = true;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StoreContextProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StoreContextProvider>
+  </StoreContextProvider>,
 );

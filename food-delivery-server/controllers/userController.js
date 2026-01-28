@@ -39,6 +39,7 @@ const loginUser = async (req, res) => {
       secure: true,
       maxAge: 24 * 60 * 60 * 1000,
       sameSite: "none",
+      path: "/",
     });
 
     return res.json({
@@ -112,6 +113,7 @@ const registerUSer = async (req, res) => {
       secure: true,
       maxAge: 24 * 60 * 60 * 1000,
       sameSite: "none",
+      path: "/",
     });
 
     return res.json({
@@ -142,6 +144,7 @@ const logOutUser = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
       // maxAge: 0,
       sameSite: "none",
+      path: "/",
     });
 
     // res.clearCookie("tokenUser");

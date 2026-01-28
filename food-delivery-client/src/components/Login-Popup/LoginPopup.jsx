@@ -37,7 +37,7 @@ const LoginPopup = ({ setShowLogin }) => {
     }
 
     try {
-      const res = await axios.post(newUrl, data);
+      const res = await api.post(newUrl, data);
 
       if (res.data.success) {
         toast.success(res.data.message);

@@ -41,9 +41,9 @@ const Add = () => {
     }
 
     try {
-      const res = await axios.post(
+      const res = await api.post(
         import.meta.env.VITE_PORT + "/api/food/add",
-        formData
+        formData,
       );
 
       if (res.data.success === true) {
@@ -126,7 +126,8 @@ const Add = () => {
               <select
                 name="category"
                 value={data.category}
-                onChange={handleChange}>
+                onChange={handleChange}
+              >
                 <option value="Salad">Salad</option>
                 <option value="Rolls">Rolls</option>
                 <option value="Desert">Desert</option>

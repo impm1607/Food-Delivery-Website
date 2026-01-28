@@ -16,8 +16,8 @@ const MyOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get(
-        import.meta.env.VITE_PORT + "/api/order/user-orders"
+      const res = await api.get(
+        import.meta.env.VITE_PORT + "/api/order/user-orders",
       );
 
       if (res.data.success) {
@@ -83,7 +83,8 @@ const MyOrders = () => {
                   onClick={() => {
                     setLoading(true);
                     fetchOrders();
-                  }}>
+                  }}
+                >
                   Track Order
                 </button>
               </div>

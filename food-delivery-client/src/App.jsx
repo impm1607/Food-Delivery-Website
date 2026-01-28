@@ -42,11 +42,12 @@ const App = () => {
         <Navbar setShowLogin={setShowLogin} />
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/order" element={<PlaceOrder />} />
-          <Route path="/verify" element={<Verify />} />
-          <Route path="/my-orders" element={<MyOrders />} />
+          <Route path="/" element={<Home />}>
+            <Route path="cart" element={<Cart />} />
+            <Route path="order" element={<PlaceOrder />} />
+            <Route path="verify" element={<Verify />} />
+            <Route path="my-orders" element={<MyOrders />} />
+          </Route>
         </Routes>
       </div>
       <Footer />

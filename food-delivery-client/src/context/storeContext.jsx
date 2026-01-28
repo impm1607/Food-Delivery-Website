@@ -10,7 +10,7 @@ const StoreContextProvider = (props) => {
   const [food_list, setFood_list] = useState([]);
 
   const loadCartData = async () => {
-    const res = await axios.get(import.meta.env.VITE_PORT + "/api/cart/get");
+    const res = await api.get(import.meta.env.VITE_PORT + "/api/cart/get");
 
     if (res.data.success) {
       setCartItem(res.data.result);
@@ -32,7 +32,7 @@ const StoreContextProvider = (props) => {
 
     // db update if token available
     if (isUserLoggedIn) {
-      await axios.post(import.meta.env.VITE_PORT + "/api/cart/add", {
+      await api.post(import.meta.env.VITE_PORT + "/api/cart/add", {
         itemId,
       });
     }
@@ -45,7 +45,7 @@ const StoreContextProvider = (props) => {
     }));
 
     if (isUserLoggedIn) {
-      await axios.post(import.meta.env.VITE_PORT + "/api/cart/remove", {
+      await api.post(import.meta.env.VITE_PORT + "/api/cart/remove", {
         itemId,
       });
     }
@@ -67,9 +67,7 @@ const StoreContextProvider = (props) => {
 
   const checkLoginStatus = async () => {
     try {
-      const res = await axios.get(
-        import.meta.env.VITE_PORT + "/api/user/verify"
-      );
+      const res = await api.get(import.meta.env.VITE_PORT + "/api/user/verify");
 
       if (res.data.success === true) {
         setIsUserLoggedIn(true);
@@ -84,7 +82,7 @@ const StoreContextProvider = (props) => {
 
   const fetchFoodList = async () => {
     try {
-      const res = await axios.get(import.meta.env.VITE_PORT + "/api/food/list");
+      const res = await api.get(import.meta.env.VITE_PORT + "/api/food/list");
 
       if (res.data.success) {
         setFood_list(res.data.result);
