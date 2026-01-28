@@ -11,7 +11,7 @@ const Order = () => {
 
   const fectchAllOrders = async () => {
     try {
-      const res = await api.get(
+      const res = await axios.get(
         import.meta.env.VITE_PORT + "/api/order/list-orders",
       );
 
@@ -33,7 +33,7 @@ const Order = () => {
     try {
       setLoading(true);
 
-      const res = await api.patch(
+      const res = await axios.patch(
         import.meta.env.VITE_PORT + "/api/order/update-status",
         { orderId, status: e.target.value },
       );

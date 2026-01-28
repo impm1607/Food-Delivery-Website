@@ -41,7 +41,7 @@ const Add = () => {
     }
 
     try {
-      const res = await api.post(
+      const res = await axios.post(
         import.meta.env.VITE_PORT + "/api/food/add",
         formData,
       );

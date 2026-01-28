@@ -21,7 +21,9 @@ const Navbar = ({ setShowLogin }) => {
 
   const handleLogout = async () => {
     try {
-      const res = await api.get(import.meta.env.VITE_PORT + "/api/user/logout");
+      const res = await axios.get(
+        import.meta.env.VITE_PORT + "/api/user/logout",
+      );
 
       if (res.data.success) {
         checkLoginStatus();

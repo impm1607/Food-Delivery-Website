@@ -10,7 +10,7 @@ const List = () => {
 
   const fetchList = async () => {
     try {
-      const res = await api.get(import.meta.env.VITE_PORT + "/api/food/list");
+      const res = await axios.get(import.meta.env.VITE_PORT + "/api/food/list");
 
       if (res.data.success) {
         setList(res.data.result);
@@ -24,7 +24,7 @@ const List = () => {
 
   const removeFood = async (id) => {
     try {
-      const res = await api.delete(
+      const res = await axios.delete(
         import.meta.env.VITE_PORT + `/api/food/remove/${id}`,
       );
 

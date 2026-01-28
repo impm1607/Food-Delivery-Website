@@ -14,7 +14,7 @@ const Verify = () => {
 
   const verifypayment = async () => {
     try {
-      const res = await api.get(
+      const res = await axios.get(
         import.meta.env.VITE_PORT + `/api/order/verify/${orderId}/${success}`,
       );
       if (res.data.success) {

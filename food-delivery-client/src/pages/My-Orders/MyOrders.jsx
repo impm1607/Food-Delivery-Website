@@ -16,7 +16,7 @@ const MyOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await api.get(
+      const res = await axios.get(
         import.meta.env.VITE_PORT + "/api/order/user-orders",
       );
 
