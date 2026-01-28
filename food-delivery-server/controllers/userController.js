@@ -38,6 +38,7 @@ const loginUser = async (req, res) => {
       httpOnly: true,
       secure: true,
       maxAge: 24 * 60 * 60 * 1000,
+      path: "/",
       sameSite: "none",
     });
 
@@ -111,6 +112,7 @@ const registerUSer = async (req, res) => {
       httpOnly: true,
       secure: true,
       maxAge: 24 * 60 * 60 * 1000,
+      path: "/",
       sameSite: "none",
     });
 
@@ -140,7 +142,7 @@ const logOutUser = async (req, res) => {
       httpOnly: true,
       secure: true,
       maxAge: 24 * 60 * 60 * 1000,
-      // maxAge: 0,
+      path: "/",
       sameSite: "none",
     });
 
